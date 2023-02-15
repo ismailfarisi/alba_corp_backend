@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
     filename: function (req, file, cb) {
         const fileType = path.extname(file.originalname ?? "");
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      cb(null, file.fieldname + '-'+ uniqueSuffix+ fileType)
+      cb(null, file.filename+'-'+req.body.date_time+ fileType)
     }
   })
   const upload = multer({storage:storage,limits:{fileSize:1000000},fileFilter: function (req, file, cb) {
