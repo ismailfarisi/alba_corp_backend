@@ -4,7 +4,7 @@ import Serializer from "./Serializer";
 
 export default class BlogPostSerializer extends Serializer {
   _serializeSingleEntity(entity: BlogPost, serviceLocator: ServiceLocator): object {
-    const date =new Date(entity.dateTime! *  1000).toISOString()
+    const date =new Date(entity.dateTime!).toISOString()
     const blogPost = {
       'id': entity.id,
       'title': entity.title,

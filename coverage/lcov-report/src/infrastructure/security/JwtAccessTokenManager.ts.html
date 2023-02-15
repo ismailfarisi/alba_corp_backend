@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/12</span>
+                <span class='fraction'>3/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/12</span>
+                <span class='fraction'>3/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -90,25 +90,25 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -123,20 +123,20 @@ import AccessTokenManager from '../../application/security/AccessTokenManager';
 import { error } from 'console';
 &nbsp;
 export default class JwtAccessTokenManager implements AccessTokenManager {
-  generate(payload: object,expiryTime:number): string {
-    return jwt.sign(payload, environment.jwtSecretKey,{expiresIn:expiryTime});
+<span class="fstat-no" title="function not covered" >  generate(</span>payload: object,expiryTime:number): string {
+<span class="cstat-no" title="statement not covered" >    return jwt.sign(payload, environment.jwtSecretKey,{expiresIn:expiryTime});</span>
   }
 &nbsp;
-  decode(accessToken: string): object | null {
-    return new Promise((resolve, reject) =&gt; {
-     jwt.verify(accessToken, environment.jwtSecretKey,(error,decoded)=&gt;{
-        <span class="missing-if-branch" title="if path not taken" >I</span>if(error instanceof jwt.TokenExpiredError){
+<span class="fstat-no" title="function not covered" >  decode(</span>accessToken: string): object | null {
+<span class="cstat-no" title="statement not covered" >    return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >     jwt.verify(accessToken, environment.jwtSecretKey,<span class="fstat-no" title="function not covered" >(e</span>rror,decoded)=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        if(error instanceof jwt.TokenExpiredError){</span>
 <span class="cstat-no" title="statement not covered" >          resolve({expired:true});</span>
-        }else if(decoded){
-          const d = decoded as jwt.JwtPayload;
+        }else <span class="cstat-no" title="statement not covered" >if(decoded){</span>
+          const d = <span class="cstat-no" title="statement not covered" >decoded as jwt.JwtPayload;</span>
           
-          resolve(d);
-        }else<span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >          resolve(d);</span>
+        }else{
 <span class="cstat-no" title="statement not covered" >          reject()</span>
         }
     });
@@ -151,7 +151,7 @@ export default class JwtAccessTokenManager implements AccessTokenManager {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-15T11:13:46.675Z
+                at 2023-02-15T11:39:59.716Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

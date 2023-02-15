@@ -14,7 +14,7 @@ describe('GET /blogpost', () => {
 
     })
 });
-describe('POST /blogpost', () => {
+describe('POST /blogpost should return error if one required field is not given', () => {
     it('should return error', async () => {
         const date = Date.now();
         const payload = {
@@ -32,8 +32,8 @@ describe('POST /blogpost', () => {
     })
 })
 
-describe('POST /blogpost', () => {
-    it('should return error ', async () => {
+describe('POST /blogpost should return error if image is bigger than 1 mb', () => {
+    it('should return error  ', async () => {
         const date = Date.now();
         const payload = {
             "title": "title",
@@ -62,15 +62,15 @@ describe('Add full blog post fields with ISO date_time', () => {
         };
         const req = await request(app)
             .post(`/api/v1/blogpost/`)
-            .field(payload).attach("main_image", "./test/large-image.jpg");
-        expect(req.status).toBe(500);
+            .field(payload).attach("main_image", "./test/image.jpg");
+        expect(req.status).toBe(400);
 
 
     })
 })
 
 describe('Add blog post then Get all blog posts failed Test', () => {
-    it('should return error if date is in iso', async () => {
+    it('should return error ', async () => {
         const date = Date.now();
         const payload = {
             "title": "test123",
@@ -80,18 +80,23 @@ describe('Add blog post then Get all blog posts failed Test', () => {
         };
         const resPost = await request(app)
             .post(`/api/v1/blogpost/`)
-            .field(payload).attach("main_image", "./test/large-image.jpg");
-        expect(resPost.status).toBe(500);
+            .field(payload).attach("main_image", "./test/image.jpg");
+        expect(resPost.status).toBe(201);
         const resGet = await request(app).get(`/api/v1/blogpost/`);
-        const list = resGet.body as Array<any>;
+        const list = (resGet.body as Array<any>).map((data)=>{return{
+            "title": data.title,
+            "description":data.description ,
+            "date_time": data.date_time,
+            "main_image": data.main_image};
+        });
 
         const testData = {
             "title": "test123",
             "description": "test123",
-            "date_time": date,
-            "main_image": `large-image-${date}.jpg`
+            "date_time": new Date(date).toISOString(),
+            "main_image": `image.jpg`
         }
-        expect(list).toContain(testData)
+        expect(list).toContainEqual(testData)
 
 
 

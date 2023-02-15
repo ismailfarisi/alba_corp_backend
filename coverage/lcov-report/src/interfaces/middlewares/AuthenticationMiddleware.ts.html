@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/21</span>
+                <span class='fraction'>3/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.44% </span>
+                <span class="strong">11.11% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/9</span>
+                <span class='fraction'>1/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.42% </span>
+                <span class="strong">10.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/19</span>
+                <span class='fraction'>2/19</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,62 +98,62 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response, NextFunction } from 'express';
 import VerifyAccessToken from '../../application/use_cases/image/VerifyToken';
 &nbsp;
-export default  ({ isOptional = <span class="branch-0 cbranch-no" title="branch not covered" >false </span>}: { isOptional: boolean } = { isOptional: false }) =&gt; async (request: Request, response: Response, next: NextFunction) =&gt; {
+export default  ({ isOptional = <span class="branch-0 cbranch-no" title="branch not covered" >false </span>}: { isOptional: boolean } = { isOptional: false }) =&gt; <span class="fstat-no" title="function not covered" >async (r</span>equest: Request, response: Response, next: NextFunction) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span>
   // Context
-  const serviceLocator = request.serviceLocator!;
+  const serviceLocator = <span class="cstat-no" title="statement not covered" >request.serviceLocator!;</span>
 &nbsp;
   // Input
-  const authorizationHeader = request.headers.authorization;
-  try {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (!authorizationHeader || !authorizationHeader.startsWith('Bearer ')) {
+  const authorizationHeader = <span class="cstat-no" title="statement not covered" >request.headers.authorization;</span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!authorizationHeader || !authorizationHeader.startsWith('Bearer ')) {</span>
 <span class="cstat-no" title="statement not covered" >      throw new Error('Missing or wrong Authorization request header');</span>
     }
-    const accessToken = authorizationHeader.replace(/Bearer/gi, '').replace(/ /g, '');
+    const accessToken = <span class="cstat-no" title="statement not covered" >authorizationHeader.replace(/Bearer/gi, '').replace(/ /g, '');</span>
 &nbsp;
     // Treatment
-    const  {image, expired } =await VerifyAccessToken(accessToken, serviceLocator);
-    const imageMatch = image == request.body.image;
-    <span class="missing-if-branch" title="if path not taken" >I</span>if(expired){
+    const  {image, expired } =<span class="cstat-no" title="statement not covered" >await VerifyAccessToken(accessToken, serviceLocator);</span>
+    const imageMatch = <span class="cstat-no" title="statement not covered" >image == request.body.image;</span>
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if(expired){</span>
 <span class="cstat-no" title="statement not covered" >        return response.status(401).json({ 'message': 'Token expired' });</span>
     }
-    if(!imageMatch){
-        return response.status(401).json({ 'message': 'Token not valid for this image' });
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if(!imageMatch){</span>
+<span class="cstat-no" title="statement not covered" >        return response.status(401).json({ 'message': 'Token not valid for this image' });</span>
     }
   
   } catch (err: unknown) {
@@ -164,7 +164,7 @@ export default  ({ isOptional = <span class="branch-0 cbranch-no" title="branch 
 <span class="cstat-no" title="statement not covered" >      return response.status(401).json({ 'message': 'Invalid Token' });</span>
     
   }
-  return next();
+<span class="cstat-no" title="statement not covered" >  return next();</span>
 };</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -172,7 +172,7 @@ export default  ({ isOptional = <span class="branch-0 cbranch-no" title="branch 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-15T11:13:46.675Z
+                at 2023-02-15T11:39:59.716Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

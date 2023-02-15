@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.66% </span>
+                <span class="strong">13.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/15</span>
+                <span class='fraction'>2/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.66% </span>
+                <span class="strong">13.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/15</span>
+                <span class='fraction'>2/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,37 +101,37 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,34 +140,34 @@ import { Request, Response } from 'express';
 import GetAccessToken from '../../application/use_cases/image/GenerateToken';
 &nbsp;
 export default {
-    async generateImageToken(request: Request, response: Response){
-        const serviceLocator = request.serviceLocator!;
+    async <span class="fstat-no" title="function not covered" >generateImageToken(</span>request: Request, response: Response){
+        const serviceLocator = <span class="cstat-no" title="statement not covered" >request.serviceLocator!;</span>
 &nbsp;
     // Input
-    const image = request.body.image;
-    const timestamp = (Date.now() + 1000 * 60*5);
-    console.log(timestamp);
+    const image = <span class="cstat-no" title="statement not covered" >request.body.image;</span>
+    const timestamp = (<span class="cstat-no" title="statement not covered" >Date.now() + 1000 * 60*5)</span>;
+<span class="cstat-no" title="statement not covered" >    console.log(timestamp);</span>
     // Treatment
     let accessToken;
-    try {
-       accessToken = await GetAccessToken({image:image},timestamp, serviceLocator);
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >       accessToken = await GetAccessToken({image:image},timestamp, serviceLocator);</span>
     } catch (err) {
 <span class="cstat-no" title="statement not covered" >      console.log(err);</span>
     }
     // Output
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (!accessToken) {
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!accessToken) {</span>
 <span class="cstat-no" title="statement not covered" >      return response.status(401).json({ 'message': 'something went wrong' });</span>
     }
-    const output = {
+    const output = <span class="cstat-no" title="statement not covered" >{</span>
         "access_token":accessToken
     };
-    return response.json(output);
+<span class="cstat-no" title="statement not covered" >    return response.json(output);</span>
   },
     
-    async getImage(request: Request, response: Response){
-        const serviceLocator = request.serviceLocator!;
+    async <span class="fstat-no" title="function not covered" >getImage(</span>request: Request, response: Response){
+        const serviceLocator = <span class="cstat-no" title="statement not covered" >request.serviceLocator!;</span>
         
-        return response.send(`&lt;img src='http://localhost:4000/static/${request.body.image}'&gt;`);
+<span class="cstat-no" title="statement not covered" >        return response.send(`&lt;img src='http://localhost:4000/static/${request.body.image}'&gt;`);</span>
 &nbsp;
 &nbsp;
     }
@@ -178,7 +178,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-15T11:13:46.675Z
+                at 2023-02-15T11:39:59.716Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
