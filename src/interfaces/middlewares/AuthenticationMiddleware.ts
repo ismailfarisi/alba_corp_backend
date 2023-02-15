@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import VerifyAccessToken from '../../application/use_cases/image/VerifyToken';
 
-export default ({ isOptional = false }: { isOptional: boolean } = { isOptional: false }) => (request: Request, response: Response, next: NextFunction) => {
+export default  ({ isOptional = false }: { isOptional: boolean } = { isOptional: false }) => async (request: Request, response: Response, next: NextFunction) => {
   // Context
   const serviceLocator = request.serviceLocator!;
 
@@ -14,7 +14,7 @@ export default ({ isOptional = false }: { isOptional: boolean } = { isOptional: 
     const accessToken = authorizationHeader.replace(/Bearer/gi, '').replace(/ /g, '');
 
     // Treatment
-    const  {image, expired } = VerifyAccessToken(accessToken, serviceLocator);
+    const  {image, expired } =await VerifyAccessToken(accessToken, serviceLocator);
     const imageMatch = image == request.body.image;
     if(expired){
         return response.status(401).json({ 'message': 'Token expired' });

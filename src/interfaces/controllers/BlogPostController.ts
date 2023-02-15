@@ -71,8 +71,9 @@ export default {
     // Treatment
     let blogPost = null;
     let error = null;
+
     try {
-    console.log("ddddddddddddddddddddfffff"+f);
+    
 
       blogPost = await CreateBlogPost(data, serviceLocator,f);
     } catch (err: unknown) {

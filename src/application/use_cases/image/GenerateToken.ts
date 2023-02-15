@@ -1,8 +1,5 @@
 import { ServiceLocator } from "../../../infrastructure/config/service-locator";
 
-export default async (par: any, {
+export default async (payload: any,expiryTime:number, {
   accessTokenManager,
-}: ServiceLocator) => accessTokenManager.generate({
-  expired: par.timestamp,
-  image:par.image
-});
+}: ServiceLocator) => accessTokenManager.generate(payload,expiryTime);
