@@ -22,7 +22,7 @@ export default {
       return response.status(401).json({ 'message': 'something went wrong' });
     }
     const output = {
-        "acsess_token":accessToken
+        "access_token":accessToken
     };
     return response.json(output);
   },

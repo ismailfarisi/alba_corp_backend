@@ -38,8 +38,8 @@ export default {
       [fieldname: string]: Express.Multer.File[];
     } | undefined;
 
-    let main_image: string|null = null;
-    if(files ){
+    let main_image: string|undefined = undefined;
+    if(files && files["main_image"] != null &&files["main_image"].length >0){
       const imagefile = files["main_image"][0];
       main_image = imagefile.filename;
       f.concat({
@@ -49,8 +49,8 @@ export default {
       })
     }
 
-    let additional_images: string[] | null = null;
-    if (files && files["additional_images"].length != 0) {
+    let additional_images: string[] | undefined = undefined;
+    if (files && files["additional_image"] != null && files["additional_images"].length != 0) {
       additional_images = files["additional_images"].map((data)=> {
         f.concat({
           buffer:data.buffer,

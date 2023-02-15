@@ -15,10 +15,13 @@ const storage = multer.diskStorage({
       cb(null, file.fieldname + '-'+ uniqueSuffix+ fileType)
     }
   })
-  const upload = multer({storage:storage,fileFilter: function (req, file, cb) {
+  const upload = multer({storage:storage,limits:{fileSize:1000000},fileFilter: function (req, file, cb) {
             var acceptedExt = ['.png','.jpg','.gif','.bmp'];
-            if (req.hasOwnProperty('file') && acceptedExt.indexOf(path.extname(file.originalname))=== -1) {
+            if ( acceptedExt.indexOf(path.extname(file.originalname))=== -1) {
                 return cb(new Error('Image type not allowed: ' + path.extname(file.originalname)));
+            }
+            if( file.size > 1000000){
+              return cb(new Error('Image size exceeded 1 mb'));
             }
 
             cb(null, true)
